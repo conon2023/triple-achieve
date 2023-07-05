@@ -7,7 +7,7 @@
 } 
 
 #newdailyTaskForm {
-  width: 700px; 
+  width: 750px; 
   height: 200px; 
   font-size: 70px;
   background-color: rgb(255, 60, 0);
@@ -15,7 +15,9 @@
   border: solid;
   border-width: 5px;
   border-color: black;
-  margin-right: 70px;
+  margin-right: 100px;
+  padding-right: 5px;
+  padding-bottom: 10px;
 }
 
 #newdailyTaskForm input{
