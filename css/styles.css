@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-family: "Lato", sans-serif; 
+} 
+
+#newdailyTaskForm {
+  width: 700px; 
+  height: 200px; 
+  font-size: 70px;
+  background-color: rgb(255, 60, 0);
+  color:black;
+  border: solid;
+  border-width: 5px;
+  border-color: black;
+  margin-right: 70px;
+}
+
+#newdailyTaskForm input{
+  margin-left: 70px; 
+}
+
+h1{
+  margin-right: 200px;
+  margin-left: 0px;
+  color: white;
+}
+
+h2{
+  margin-left: 235px;
+  margin-right: 0px;
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  justify-content: center; /* Align the content horizontally in the center */
+  margin-top: 50px;
+  margin-left: 90px;
+}
+
+body {
+  font-family: "monospace";
+  padding-top: 0px;
+  background-color: #9bbdfa;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  /* align-items: center; Center vertically */
+  height: 100vh; /* Use the full viewport height */
+  margin-top: 20px;
+  margin-left: 300px;
+  width: 800px ;
+  }
+
+  .header-container{
+    margin-left: 80px;
+    background-color: blue;
+    border-radius: 40px 20px 20px 40px; /* Top-left, top-right, bottom-right, bottom-left */
+     }
+
+
+ .app-name{
+  margin-left: 200px;
+  font-size: 50px;
+  justify-content: center;
+  text-align: justify;
+ }
+
+ .footer-container{
+height: 50px;
+background-color: crimson;
+width: auto;
+ }

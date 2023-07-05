@@ -21,4 +21,4 @@ Tasks users can not progress with for one reason or the others will read stuck a
 In the **Home Page**, there will also be an ***about*** page. The about page will tell abit about the app, the maker of the app and a short guide on how users mau navigate the functions of this app.  
 
 
-The above guidelines will generally guide the development of the app. However, designer is at liberty to adjust to suit plans and purposes. 
+The above guidelines will guide the development of the app. However, designer is at liberty to adjust to suit plans and purposes. 
