@@ -21,9 +21,6 @@
             </div>
         </header>
         <div class="content-container">
-            <div>
-
-            </div>
             <form id="newdailyTaskForm">
                 <div class="labeltitle">
                     <label class="texttitle">Add a Title</label>
@@ -37,8 +34,10 @@
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
-                <button type="submit">Add Task</button>
+                <button id="save-task" type="submit">Add Task</button>
             </form>
+            <!-- Add a button for clearing tasks -->
+            <button id="clear-tasks">Clear All Tasks</button>
 
             <ul id="task-list">
                 <!-- Task items will be dynamically added here -->

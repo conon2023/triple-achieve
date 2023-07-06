@@ -1,66 +1,171 @@
-"use strict";
-const allTasks = [];
+// "use strict";
 
-//create constructor function Daily Task
+// // Define an empty array to store the tasks
+// let tasks = [];
+
+// // Define the DailyTask constructor function
+// function DailyTask(title, description, category, dueDate, priority) {
+//   this.title = title;
+//   this.description = description;
+//   this.category = category;
+//   this.dueDate = dueDate;
+//   this.priority = priority;
+// }
+
+// // Add a render method to the DailyTask prototype
+// DailyTask.prototype.render = function() {
+//   const taskList = document.getElementById("task-list");
+//   const taskItem = document.createElement("li");
+//   taskItem.innerHTML = `
+//     <h2>${this.title}</h2>
+//     <p><strong>Description:</strong> ${this.description}</p>
+//     <p><strong>Category:</strong> ${this.category}</p>
+//     <p><strong>Due Date:</strong> ${this.dueDate}</p>
+//     <p><strong>Priority:</strong> ${this.priority}</p>
+//   `;
+//   taskList.appendChild(taskItem);
+// };
+
+// // Function to save tasks to local storage
+// function saveTasksToLocalStorage() {
+//   localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
+
+// // Function to load tasks from local storage
+// function loadTasksFromLocalStorage() {
+//   const storedTasks = localStorage.getItem("tasks");
+//   if (storedTasks) {
+//     tasks = JSON.parse(storedTasks);
+//     tasks.forEach(function(taskData) {
+//       const { title, description, category, dueDate, priority } = taskData;
+//       const task = new DailyTask(title, description, category, dueDate, priority);
+//       task.render();
+//     });
+//   }
+// }
+
+// // Function to handle form submission
+// function handleFormSubmit(event) {
+//   event.preventDefault();
+
+//   const form = event.target;
+//   const title = form.title.value;
+//   const description = form.description.value;
+//   const category = form.category.value;
+//   const dueDate = form.dueDate.value;
+//   const priority = form.priority.value;
+
+//   // Create a new task object
+//   const task = new DailyTask(title, description, category, dueDate, priority);
+
+//   // Render the task on the page
+//   task.render();
+
+//   // Add the task to the tasks array
+//   tasks.push(task);
+
+//   // Save the tasks to local storage
+//   saveTasksToLocalStorage();
+
+//   // Reset the form
+//   form.reset();
+// }
+
+// // Add event listener to the form submit event
+// const form = document.getElementById("newdailyTaskForm");
+// form.addEventListener("submit", handleFormSubmit);
+
+// // Load tasks from local storage on page load
+// loadTasksFromLocalStorage();
+
+"use strict";
+
+// Define an empty array to store the tasks
+let tasks = [];
+
+// Define the DailyTask constructor function
 function DailyTask(title, description, category, dueDate, priority) {
   this.title = title;
   this.description = description;
   this.category = category;
   this.dueDate = dueDate;
   this.priority = priority;
-
-  this.pushTask();
-  this.render();
 }
 
-DailyTask.prototype.pushTask = function() {
-  allTasks.push(this);
+// Add a render method to the DailyTask prototype
+DailyTask.prototype.render = function() {
+  const taskList = document.getElementById("task-list");
+  const taskItem = document.createElement("li");
+  taskItem.innerHTML = `
+    <h2>${this.title}</h2>
+    <p><strong>Description:</strong> ${this.description}</p>
+    <p><strong>Category:</strong> ${this.category}</p>
+    <p><strong>Due Date:</strong> ${this.dueDate}</p>
+    <p><strong>Priority:</strong> ${this.priority}</p>
+  `;
+  taskList.appendChild(taskItem);
 };
 
-DailyTask.prototype.render = function() {
-   
-  };
+// Function to save tasks to local storage
+function saveTasksToLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
-function renderDailyTask() {
-    const taskList = document.getElementById("task-list");
-    taskList.innerHTML = "";
-  
-    allTasks.forEach(function(task) {
-      const taskItem = document.createElement("li");
-      taskItem.innerHTML = `
-        <h2>${task.title}</h2>
-        <p><strong>Description:</strong> ${task.description}</p>
-        <p><strong>Category:</strong> ${task.category}</p>
-        <p><strong>Due Date:</strong> ${task.dueDate}</p>
-        <p><strong>Priority:</strong> ${task.priority}</p>
-      `;
-      taskList.appendChild(taskItem);
+// Function to load tasks from local storage
+function loadTasksFromLocalStorage() {
+  const storedTasks = localStorage.getItem("tasks");
+  if (storedTasks) {
+    tasks = JSON.parse(storedTasks);
+    tasks.forEach(function(taskData) {
+      const { title, description, category, dueDate, priority } = taskData;
+      const task = new DailyTask(title, description, category, dueDate, priority);
+      task.render();
     });
   }
+}
 
-const newdailyTaskForm = document.getElementById("newdailyTaskForm");
+// Function to handle form submission
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-newdailyTaskForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-  
-    const form = event.target;
-    const title = form.title.value;
-    const description = form.description.value;
-    const category = form.category.value;
-    const dueDate = form.dueDate.value;
-    const priority = form.priority.value;
-  
-    new DailyTask(title, description, category, dueDate, priority);
-  
-    form.reset();
-  });
+  const form = event.target;
+  const title = form.title.value;
+  const description = form.description.value;
+  const category = form.category.value;
+  const dueDate = form.dueDate.value;
+  const priority = form.priority.value;
 
-const dailyTask1 = new DailyTask("Task 1", "Description 1", "Category 1", "Due Date 1", "Priority 1");
-const dailyTask2 = new DailyTask("Task 2", "Description 2", "Category 2", "Due Date 2", "Priority 2");
-const dailyTask3 = new DailyTask("Task 3", "Description 3", "Category 3", "Due Date 3", "Priority 3");
-const dailyTask4 = new DailyTask("Task 4", "Description 4", "Category 4", "Due Date 4", "Priority 4");
-const dailyTask5 = new DailyTask("Task 5", "Description 5", "Category 5", "Due Date 5", "Priority 5");
+  // Create a new task object
+  const task = new DailyTask(title, description, category, dueDate, priority);
 
-renderDailyTask();
+  // Render the task on the page
+  task.render();
 
-  
+  // Add the task to the tasks array
+  tasks.push(task);
+
+  // Save the tasks to local storage
+  saveTasksToLocalStorage();
+
+  // Reset the form
+  form.reset();
+}
+
+// Function to clear all tasks
+function clearAllTasks() {
+  tasks = []; // Clear the tasks array
+  const taskList = document.getElementById("task-list");
+  taskList.innerHTML = ""; // Clear the task list in the DOM
+  localStorage.removeItem("tasks"); // Clear the tasks from local storage
+}
+
+// Add event listener to the form submit event
+const form = document.getElementById("newdailyTaskForm");
+form.addEventListener("submit", handleFormSubmit);
+
+// Add event listener to the "Clear All Tasks" button
+const clearTasksButton = document.getElementById("clear-tasks");
+clearTasksButton.addEventListener("click", clearAllTasks);
+
+// Load tasks from local storage on page load
+loadTasksFromLocalStorage();
