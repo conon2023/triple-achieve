@@ -18,7 +18,7 @@ DailyTask.prototype.pushTask = function() {
 };
 
 DailyTask.prototype.render = function() {
-    // this.render();
+   
   };
 
 function renderDailyTask() {
