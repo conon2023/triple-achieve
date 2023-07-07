@@ -159,12 +159,11 @@ background-color:black;
 border-style: solid;
 border-width: 3px;
 border-color: white;
-/* margin-bottom: 10px; */
 padding-top: 0px;
-width: 500px;
+width: 730px;
 height: 30px;
 color: yellow;
-text-align:left
+text-align:center
 }
 
 #save-task {
@@ -172,7 +171,7 @@ text-align:left
   background-color: black;
   color: white;
   width: 250px;
-  margin-left: 0px;
+  margin-left: 10px;
   border: none;
   margin-top: 0px;
   transition: background-color 0.3s;
