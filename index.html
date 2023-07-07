@@ -17,30 +17,52 @@
                 <div class="app-name">
                     <h1>BRAVO</h1>
                 </div>
-                <h2>Daily Goals Made Easy</h2>
+                <h3><i>...my daily goals buddy!</i></h3>
             </div>
         </header>
         <div class="content-container">
             <form id="newdailyTaskForm">
+                <p>Add A New Task
+                </p>
                 <div class="labeltitle">
-                    <label class="texttitle">Add a Title</label>
+                    <label class="title">Add a Title</label>
                     <input type="text" name="title" placeholder="Title">
                 </div>
-                <input type="text" name="description" placeholder="Description">
-                <input type="text" name="category" placeholder="Category">
-                <input type="date" name="dueDate">
-                <select name="priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-                <button id="save-task" type="submit">Add Task</button>
+
+                <div class="labeldescription">
+                    <label class="description">Add a Description</label>
+                    <input type="text" name="description" placeholder="Description">
+                </div>
+
+                <div class="labelcategory">
+                    <label class="category">Add a Category</label>
+                    <input type="text" name="category" placeholder="Category">
+                </div>
+
+                <div class="labeldate">
+                    <label class="date">Add Due Date</label>
+                    <input type="date" name="dueDate">
+                </div>
+
+                <div class="labelpriority">
+                    <label class="priority">Set Task's Priority</label>
+                    <select name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+                    <div>
+                        <button id="save-task" type="submit">Add Task</button>
+                    </div>
+               
             </form>
-            <!-- Add a button for clearing tasks -->
+
             <button id="clear-tasks">Clear All Tasks</button>
 
-            <ul id="task-list">
-                <!-- Task items will be dynamically added here -->
+            <ul id="task-list" style="list-style-position: inside; text-align: left; list-style-type: none;">
+
             </ul>
         </div>
     </main>
